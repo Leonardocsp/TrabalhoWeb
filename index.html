@@ -1,14 +1,23 @@
+<!-- 
+  Alterações realizadas em comparação ao primeiro código:
+  - Adicionado uma constante no script para utilizar o css style no JavaScript.
+  - Criei o style com id "dynamicStyles" para refereciar no script e então passei o css todo para o script.
+  - Definidas duas funções, exibirMensagem e mensagem, para exibir um alerta.
+  - Utilizado setInterval no loop for dentro da função mensagem.
+  - Ajustei os links para voltar para a própria página invés de ir para as páginas do trabalho anterior.
+  - Criei a função 'alterarCorTextoRodape' a fim de mudar a cor do texto no rodapé.
+  - Adicionada a constante 'footer' no script para referenciar o elemento do rodapé.
+  - Exemplo de chamada da função para alterar a cor do texto no rodapé para vermelho.
+-->
+
 <!DOCTYPE html>
-<html lang="PT-BR">
-
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre</title>
-  <link rel="stylesheet" href="styyle.css">
-  <link rel="stylesheet" href="./index.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trabalho </title>
+<style id="dynamicStyles"></style>
 </head>
-
 <body>
   <div class="grid-container">
     <header class="header">
@@ -18,16 +27,16 @@
           <a href="./index.html">
             <li>INICIO</li>
           </a>
-          <a href="./cadastro.html">
+          <a href="./index.html">
             <li>CADASTRO</li>
           </a>
-          <a href="./Membros.html">
+          <a href="./index.html">
             <li>MEMBROS</li>
           </a>
-          <a href="./grid.html">
+          <a href="./index.html">
             <li>LOJA</li>
           </a>
-          <a href="./casas.html">
+          <a href="./index.html">
             <li>CASAS</li>
           </a>
         </ul>
@@ -86,9 +95,171 @@
           <p>Fantasias : compre agora. Imagens meramente ilustrativas.</p>
         </div>
       </section>
-    </main>
-    <footer class="footer">
-      Todos Direitos reservados&copy;
-    </footer>
+</main>
+<footer class="footer">
+&copy;Todos Os Direitos reservados&copy;
+</footer>
+<script>
+function exibirMensagem() {}
+function mensagem() {        
+  var passo;
+  for (passo = 5; passo > 0; passo--) {      
+      setInterval(exibirMensagem, 1000);        
+      if (passo==5) {
+        alert("A página iniciará em instantes. Clique Ok.");}
+      }
+  }
+  mensagem();    
+  const dynamicStyles = document.getElementById('dynamicStyles');
+  const cssStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Indie+Flower&family=Playfair+Display:ital,wght@1,500&display=swap');
+  body{
+      background-color: #b99292;
+      font-family: Arial, sans-serif;
+      margin: 0px;
+      padding: 0px;
+      background-image: url(./img_grid/fundo_sobre.jpg);
+  }
+
+  header {
+      padding: 10px 0px;
+      text-align: center;
+      color: #fff;
+  }
+
+  ul{
+      margin: 0px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(to right, green,red, yellow);
+      justify-content: center;
+      text-shadow: 4px 5px 10px rgba(0, 0, 0.7);
+  }
+  li{
+      display: inline-block;
+      color: #fff;
+      padding: 10px;
+  }
+  li:hover{
+      background-image: linear-gradient(to left,  red,yellow);
+      border-left: 1px solid rgba(0, 0, 0, 0);
+      border-right: 1px solid rgba(0, 0, 0, 0);
+  }
+  a{
+      text-decoration: none;
+  } 
+
+  h1{
+      font-size: 80px;
+      color: white;
+      font-family: 'Dancing Script', cursive;
+
+  }
+  p{
+      text-align: justify;
+      padding: 10px;
+      font-family: 'Indie Flower', cursive;
+      font-weight: bold;
+  }
+  .grid-container{
+      display: grid;
+      grid-template-rows: 260px auto 100px;
+      grid-template-areas: 
+      "header"
+      "main"
+      "footer"
+  }
+  .header{
+      background-size: cover;
+      background-position: center;
+      grid-area: header;
+      text-align: center;
+      height: 220px;
+      font-family: serif;
+  }
+  .secao1{
+      grid-area: main;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: start;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .secao2{
+      grid-area: main;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: start;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .footer{
+      grid-area: footer;
+      text-align: center;
+      color: #fff;
+      margin-top: 40px;
+  }
+
+  img{
+      width: 100%;
+      border-radius: 10px;
+  }
+  .item1{
+      background-color: #b51c1c;
+      color: white;
+  }
+  .item2{
+      background-color: yellow;
+  }
+  .item3{
+      background-color: blue;
+      color: white;
+  }
+  .item4{
+      background-color: green;
+  }
+  .item5{
+      background-color: #b51c1c;
+      color: white;
+  }
+  .item6{
+      background-color: yellow;
+  }
+  .item7{
+      background-color: blue;
+      color: white;
+  }
+  .item8{
+      background-color: green;
+  }
+  .item1,.item2,.item3,.item4{
+      text-align: center;
+      border-radius: 10px;
+      flex-grow: 1;
+      flex-basis: 200px;
+      margin: 5px;
+  }
+  .item5,.item6,.item7,.item8{
+      text-align: center;
+      border-radius: 10px;
+      flex-grow: 1;
+      flex-basis: 200px;
+      margin: 5px;
+  }
+  `;
+  dynamicStyles.textContent = cssStyles;
+ 
+  const footer = document.querySelector('.footer');
+
+  function alterarCorTextoRodape(novaCor) {
+    footer.style.color = novaCor;
+  }
+  alterarCorTextoRodape('red');
+</script>
 </body>
 </html>
